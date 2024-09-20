@@ -1,0 +1,71 @@
+<!-- ALUMNA: AMÉRICA JAZMÍN ESTRADA HERNANDEZ
+ DESCRIPCIÓN: LOGIN CON TRANSICIONES-->
+
+ <!-- EL DOCUMENTO ES UN TIPO DE ARCHIVO HTML,
+  ESTABLECE QUE EL IDIOMA PRINCIPAL-->
+
+<!DOCTYPE html>
+<html lange="en">
+ <head>
+    <title>Login y Registro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!-- da la referencia a los iconos de Boxicons-->
+</head> 
+ <body>
+    <div class="container">              <!-- ES EL CONTENEDOR PRINCIPAL QUE AGRUPA Y ORGANIZA LOS ELEMENTOS-->
+        <div class="curved-shape"></div> <!-- GENERAR FORMA CUERVA DECORATIVA EN LA INTERFAZ, QUEDARA DEFINIDA EN EL CSS-->
+        <div class="curved-shape2"></div>
+        <div class="form-box Login">    <!-- SE DA COMIENZO A UN CONTENEDOR ESPECIFICO PARA EL FORMULARIO DE INICIO DE SESIÓN-->
+            <h2 class="animation" style="--D:0; --S:21"> Inicio de sesión</h2><!-- SE LE AGREGA UN TITULO DE NIVEL 2, SE LE AGREGARAN ANIMACIONES Y LAS VARIABLES SE UTILIZARN PARA CONTROLAR LA VELOCIDAD O EL RETARDO DE LAS ANIMACIONES-->
+            <form action="#">  <!-- EL COMIENZO DEL FORMULARIO -->      
+                <div class="input-box animation"style="--D:1; --S:22"> <!-- ES UN INDICADOR PARA GESTIONAR EL ESTILO Y DISEÑO, SE LE AGREGARA ANIMACIONES-->
+                    <input type="text" required> <!-- CAMPO DE ENTRADA DE TEXTO, HACE QUE ELO CAMPO SEA OBLIGATORIO --> 
+                    <label for="">Nombre de Usuario</label> <!-- INDICARA AL USUARIO QUE DEBE INGRESAR SU NOMBRE DE USUARIO, ES LA DESCRIPCION --> 
+                    <i class='bx bx-user'></i> <!-- CON LA i SE USA PARA INSERTAR UN ICONO --> 
+                </div>
+                <div class="input-box animation" style="--D:2; --S:23">  
+                    <input type="password" required>
+                    <label for="">Contraseña</label>  <!-- INDICACION PARA QUE EL USUARIO INGRESE SU CONTRASEÑA--> 
+                    <i class='bx bx-lock-alt'></i>  <!-- UTILIZA LA BIBLIOTECA DE BOXICONS --> 
+                </div> <!-- CON --D SE INDICA EL RETARDO Y CON --S DEFINE EL TIEMPO O NUMERO DE PASOS DE LA ANIMACION --> 
+                <div class="input-box animation" style="--D:3; --S:24"> <!-- SE AGRUPA EL BOTON DE ENVIO DEL FORMULARIO --> 
+                    <button class="btn" type="submit">Ingresar</button> <!-- NOMBRE DEL BOTON Y SE INDICARA QUE AL HACER CLIC SE ENVIARA--> 
+                </div>
+                <div class="regi-link animation" style="--D:4; --S:25">
+                    <p>¿No tengo cuenta?<a href="#" class="RegístrateLink">Regístrate</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="info-content Login">  
+            <h2 class="animation" style="--D:0; --S:20;">BIENVENIDO</h2> <!-- SE DEFINE UN ENCABEZADO--> 
+            <p class="animation" style="--D:1; --S:21;">Comencemos La Aventura</p> <!-- ES UN PARRAFO QUE SIGUE AL ENCABEZADO --> 
+        </div>
+        <div class="form-box Register"> <!-- UN CONTENEDOR PARA EL FORMULARIO DE REGISTRO--> 
+            <h2 class="animation" style="--li:17; --S:0;"> Registro</h2>
+            <form action="#">
+                <div class="input-box animation" style="--li:18; --S:1;">
+                    <input type="text" required>
+                    <label for="">Nombre de Usuario</label>
+                    <i class='bx bx-user'></i>
+                </div>
+                <div class="input-box animation" style="--li:19; --S:2;">
+                    <input type="text" required>
+                    <label for="">Contraseña</label>
+                    <i class='bx bx-lock-alt'></i>
+                </div>
+                <div class="input-box animation" style="--li:20; --S:3;"> 
+                    <button class="btn" type="submit">Registrate</button>
+                </div>
+                <div class="regi-link animation" style="--li:21; --S:4;"> <!-- CONTENEDOR QUE INCLUYE UN MENSAJE Y UN ENLACE PARA LOS USUARIOS QUE YA TIENEN UNA CUENTA--> 
+                    <p>Ya tengo cuenta<a href="#" class="SignInLink">Regresar</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="info-content Register">
+            <h2 class="animation" style="--li:17; --S:0;">CREA UNA AVENTURA</h2>
+            <p class="animation" style="--li:18; --S:1;">Acompañanos a diseñar caminos mágicos</p>
+        </div>
+    </div>
+    <script src="index.js"></script> 
+ </body>  
+</html>

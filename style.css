@@ -1,0 +1,252 @@
+/* APLICACION DE UN ESTILO BASICO A LOS ELEMNETOS DE LA PAGINA  */
+*{
+    margin: 0; /* MARGEN*/
+    padding: 0; /* RELLENO*/
+    box-sizing: border-box; /*INLCUYE EL BORDE Y EL RELLENO EN EL CALCULO DEL ANCHO Y ALTO */
+    font-family: "poppins"; /*FUENTE DE TODOS LOS TEXTOS*/
+    color: #fff; /* COLOR DEL TEXTO*/
+}
+/* ESTILIZA EL ELEMENTO BODY DEL LA PAGINA*/
+body{
+    display: flex; /*MODELO DE CAJA FLEXIBLE*/
+    justify-content: center; /* LO CENTRA HORIZONTALMENTE*/
+    align-items: center; /* CENTRA VERTICALMENTE LOS ELEMENTOS DENTRO DE BODY*/
+    min-height: 100vh; /*REPRESENTA EL 100% DE LA ALTURA DE LA VENTANA */
+    background: linear-gradient(to right, #fcbad3a6, #dcb6e1d2); /*SE APLICA UN FONDO DEGRADADO LINEAL*/
+}
+.container{
+    position: relative; /**/
+    width: 750px;/*ESTABLECE EL ANCHO DEL CONTENEDOR*/
+    height: 450px; /*ESTABLECE LA ALTURA DEL CONTENEDOR*/
+    border: 2px solid #ff2770; /*ES UN BORDE SOLIDO DE 2PX DE GROSOR ALREDEDOR DEL CONTENEDOR*/
+    box-shadow: 0 0 25px #ff2770; /*SOBRA ALREDEDOR DEL CONTENEDOR, TIENE UN DIFUMINADO DE 25 PX*/
+    background: #27d4ff2c; /*COLOR DE FONDO DEL CONTENEDOR*/
+    overflow: hidden;
+}
+.container .form-box{     /*ESTILO PARA UN ELEMENTO DENTRO DEL CONTEENDOR CON POSICIONAMIENTO Y DISEÑO*/
+    position: absolute;
+    top: 0;  /*ESTABLECE LA POSICION DEL BORDE SUPERIOR DEL ELEMENTO AL BORDE SUPERIOR*/
+    width: 50%; /*ANCHO DEL ELEMENTO*/
+    height: 100%; /* ALTURA DEL ELEMENTO*/
+    display: flex; /*ALINEAR Y DISTRIBUIR EL ESPACIO DENTRO DEL ELEMENTO*/
+    justify-content: center; /*ALINEA LOS ELEMENTOS HORIZONTALMENTE EN EL CENTRO*/
+    flex-direction: column; /*ESTABLECE LA DIRECCION DE LOS ELEMENTOS */
+}
+.form-box.Login{  /*ESTILO PARA UN ELEMENTO ESPECIFICO DENTRO DE LOGIN*/
+    left: 0; /*UBICA EL ELEMENTO EN EL BORDE IZQUIERDO */
+    padding: 0 60px;  /*RELLENO INTERNO */
+}
+.form-box.Login .animation{  /*ESTILO PARA UN ELEMENTO CON LA CLASE ANIMATION*/
+    transform: translateX(0%); /* APLICA UNA TRANSFORMACION PARA MOVER EL ELEMENTO EN EL EJE HORIZONTAL*/
+    transition: .7s; /*TRANSICION DE .7 SEGUNDOS*/
+    opacity: 1; /*ESTABLECE LA OPACIDAD */
+    /*transition-delay: calc(.1s * var(--S));*/
+}
+.container.active .form-box.Login .animation{  /* ESTILO PARA LA CLASE ANIMATION */
+    transform: translateX(-120%); /*TRANSFOMACION PARA MOVER HACIA LA IZQUIERDA EN EL EJE HORIZONTAL EN UN 120% DE SU PROPIO ANCHO*/
+    opacity: 0; /*OPACIDAD DEL ELEMTNO LO HACE TRANSPARENTE E INVISIBLE*/
+}
+
+.form-box.Register{ /*ESTILO PARA EL ELEMTNO CON LA CLASE REGISTRO DENTRO DEL CONTENEDOR*/
+    right: 0; /*ESTABLECE LA POSICION DEL BORDE DERECHO DEL CONTENEDOR*/
+    padding: 0 50px; /*APLICA UN RELLENO INTERNO DE 0 PX EN LA PARTE SUPERIOR E INFERIOR Y 50 PX A LA IZQUIERDA Y DERECHA DEL ELEMENTO*/
+}
+
+.form-box.Register .animation{  /*ESTILO PARA EL ELEMENTO CON LA CLASE ANIMACION*/
+    transform: translateX(120%); /*APLICA UNA TRANSFORMACION PARA MOVER EL ELEMENTO HACIA LA DERECHA EN EL EJE HORIZONTAL*/
+    transition: .7s ease; /*TRANSICION DE .7 SEGUNDOS*/
+    opacity: 1; /*OPACO Y VISIBLE*/
+    transition-delay: calc(.1s * var(--S)); /*DEFINE UN RETRASO ANTES DE QUE LA TRANSICION COMIENCE, MULTUPLICANDO .1S POR EL VALOR DE LA VARIABLE CSS --S, RETRASA EL INICIO DE LA ANIMACION EN FUNION DEL VALOR DE LA VARIABLE --S*/
+}
+.container.active .form-box.Register .animation{  /**/
+    transform: translateX(0%); /*APLICA LA TRANSFORMACION PARA MOVER EL ELEMENTO AL 0% EN EL EJE HORIZONTAL*/
+    opacity: 1; /*OPACIO Y VISIBLE*/
+    transition-delay: calc(.1s * var(--li)); /*DEFINE UN RETRASO ANTES DE QUE LA TRANSICION COMIENCE*/
+}
+.form-box h2{ /*ESTILO PARA LOS ELEMENTOS DE H2*/
+    font-size: 32px; /*DEFINE EL TAMAÑO DE LA FUENTE DEL TEXTO EN 32 PX, AJUSTA EL TAMAÑO DEL TEXTO*/
+    text-align: center; /*ALINEA EL TEXTO HORIZONTALMENTE EN EL CENTRO DEL CONTENEDOR*/
+}
+.form-box .input-box{ 
+    position: relative; /*POSICIONAMIENTO DEL ELEMENTO COMO RELATIVO*/
+    width: 100%; /*DEFINE EL ANCHO DEL CONTENEDOR AL 100%*/
+    height: 50px; /*ALTURA */
+    margin-top: 25px; /*MARGEN SUPERIOR DE 25 PIXELES, AGREGA ESPACIO ADICIONAL ENCIMA DEL ELEMENTO, SEPARANDOLO DE LOS ELEMENTOS ANTERIORES*/
+}
+.input-box input{
+    width: 100%;  /*ANCHO DEL CAMPO DE ENTRADA*/
+    height: 100%; /*ALTURA*/
+    background: transparent; /*FONDO DEL CAMPO DE ENTRADA COMO TRANSPARENTE */
+    border: none; /*ELIMINA EL BORDE PREDETERMINADO DEL CAMPO DE ENTRADA*/
+    outline: none; /*ELIMINA EL CONTORNO QUE SUELE APARECER ALREDEDOR DEL CAMPO DE ENTRADA*/
+    font-size: 16px;/*TAMAÑO DE LA FUENTE DEL TEXTO*/
+    color: #fff; /*COLOR DE TEXTO*/
+    font-weight: 600; /*HACE QUE EL TEXTO SEA SEMINEGRITA*/
+    border-bottom: 2px solid #fff; /*BORDE SOLIDO EN LA PARTE INFERIOR */
+    padding-right: 23px; /*RELLENO DE 23 PX A LA DERECHA */
+    transition: .5s; /*TRANSICION DE .5 SEGUNDOS PARA LOS CAMBIOS EN LAS PROPIEDADES ANIMABLES, PROPORCIONANDO UN EFECTO DE SUAVIZADO PARA LAS ANIMACIONES*/
+}
+.input-box input:focus,
+.input-box input:valid{
+    border-bottom: 2px solid #ff2770; /*CAMBIA EL COLOR DEL BORDE INFERIOR A UN ROSA*/
+}
+
+.input-box label{
+    position: absolute; /*POSICION ABSOLUTA*/
+    top: 50%; /*BORDE SUPERIOR DEL ELEMENTO COMO ABSOLUTA*/
+    left: 0; /*BORDE IZQUIERDO */
+    transform: translateY(-50%); /*DESPLAZA EL ELEMENTO VERTICALMENTE HACIA ARRIBA DE SU PROPIA ALTURA*/
+    font-size: 16px; /* TAMAÑO DE LA FUENTE DEL TEXTO*/
+    color: #fff;
+    transition: .5s; /*TRANSICION DE .5 SEGUNDOS */
+}
+.input-box input:focus ~ label,
+.input-box input:focus ~ label{
+    top: -5px; /*CAMBIA LA POSICION VERTICAL, MOVIENDO HACIA ARRIBA A 5 PX POR ENCIMA DE SU POSICION ORIGINAL.*/
+    color:#ff2770;
+}
+.input-box i{ /*ESTILOS */
+    position: absolute; /* ESTABLECE LA POSICION  ABSOLUTA*/
+    top: 50%; /*POSICIONA EL BORDE SUPERIOR DEL ELEMENTO EN EL 50% DE LA ALTURA*/
+    right: 0; /*BORDE DERECHO DEL ELEMENTO EN EL 50%*/
+    font-size: 18px; /*TAMAÑO DE LA FUENTE DEL TEXTO*/
+    transform: translateY(-50%); /*DESPLAZA EL ELEMENTO VERTICALMENTE HACIA ARRIBA EN UN 50% DE SU PROPIA ALTURA*/
+    transition: .5s; /* TRANSICION DE .5S*/
+}
+.input-box input:focus ~ i,
+.input-box input:focus ~ i{
+    color:#ff2770; /*CAMBIA EL COLOR DEL TEXTO DEL ELEMENTO A UN TONO ROSA*/
+}
+.btn{
+    position: relative; /*POSICION RELATIVA*/
+    width:100%; /*DEFINE EL ANCHO  DEL BOTON*/
+    height: 45px; /*ESTABLECE LA ALTURA DEL BOTON EN 45 PX*/
+    background: transparent; /*FONDO DEL BOTON COMO TRANSPARENTE*/
+    border-radius: 40px; /*RADIO DE BORDE */
+    cursor: pointer; /*CAMBIA EL CURSOS */
+    font-size: 16px; /*TAMAÑO DE LA FUENTE DEL TEXTO*/
+    font-weight: 600; 
+    border:2px solid #ff2770; /*APLICA UN BORDE SOLIDO DE 2 PX ALREDEDOR DEL BOTON */
+    overflow: hidden; /*OCULTA CUALQUIER CONTENIDO QUE SE DESBORDE DEL AREA DEL BOTON */
+    z-index: 1; /* ESTABLECE EL INDICE DEL BOTON EN 1 */
+}
+.btn::before{  
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#27d4ff2c, #ff2770);
+    top: -100%;
+    left: 0;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn:hover:before{
+    top: 0;
+}
+.regi-link{
+    font-size: 14px;
+    text-align: center;
+    margin: 20px 0 10px;
+    
+}
+.regi-link a{
+    text-decoration: none;
+    color: #ff2770;
+    font-weight: 600;
+}
+.regi-link a:hover{
+    text-decoration: underline;
+}
+.info-content{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.info-content.Login{
+    right: 0;
+    text-align: right;
+    padding:0 40px 60px 120px;
+}
+.info-content.Login .animation{
+    transform: translateX(0);
+    transform: .7s ease;
+    transition-delay: calc(.1s * var(--S));
+    opacity: 1;
+    filter: blur(0px)
+}
+.container.active .info-content.Login .animation{
+    transform: translateX(120%); /*MUEVE EL ELEMENTO A LA DERECHA FUERA DEL AREA VISIBLE EN UN 120% DE SU PROPIO ANCHO, SE DESPLAZAMIENTO HORIZONTALMENTE*/
+    opacity: 0; /*TRANSPARENTE*/
+    filter: blur(10px); /*DESENFOQUE DE 10 PX*/
+    transition-delay: calc(.1s * var(--D)); /**ESTABLECE UN RETRASO EN EL INICIO DE LA TRANSICION BASADO EN EL VALOR DE LA VARIABLE CSS --D*/
+
+}
+.info-content.Register{
+
+    left: 0;
+    text-align: left;
+    padding:0 150px 60px 10px;
+    pointer-events: none; /*DESACTIVA LOS EVENTOS DEL PUNTERO SOBRE EL CONTENEDOR */
+    
+}
+.info-content.Register .animation{
+    transform: translateX(120%);
+    transform: .7s ease;
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.1s * var(--S));
+   
+}
+.container.active .info-content.Register .animation{
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: calc(.1s * var(--li));
+    
+}
+.info-content h2{
+    text-transform: uppercase;
+    font-size: 36px;
+    line-height: 1.3;
+}
+.info-content p{ /*ESTILO PARA LOS ELEMENTOS P */
+    font-size: 16px; /*TAMAÑO DE LA FUENTE DEL TEXTO EN 16 PX*/
+}
+.container .curved-shape{ /*ESTILOS PARA LOS ELEMENTOS CON LA CLASE */
+    position: absolute; /* POSICION DEL ELEMENTO COMO ABSOLUTA*/
+    right: 0; /*BORDE DERECHO*/
+    top: -5px;
+    height: 600px;
+    width: 850px;
+    background: linear-gradient(45deg, #27d4ff2c, #ff2770);
+    transform: rotate(10deg) skewY(40deg);
+    transform-origin: bottom right;
+    transition: 1.5s ease;
+}
+.container.active .curved-shape{ 
+    transform: rotate(0deg) skewY(0deg);  /*TRANSFORMACION DEL ELEMENTO A UNA ROTACION DE 0 GRADOS Y UNA INCLINACION VERTICAL DE 0 GRADOS*/
+}
+
+.container .curved-shape2 {
+    position: absolute;
+    left: 250px;
+    top: 100%;
+    height: 700px;
+    width: 850px;
+    background: #27d4ffcc; /* Color inicial del fondo */
+    border-top: 3px solid #ff2770;
+    transform: rotate(0deg) skewY(0deg);
+    transform-origin: bottom left;
+    transition: transform 1.5s ease; /* Añadimos transición para el fondo */
+    transition-delay: .5s;
+}
+.container.active .curved-shape2{
+    transform: rotate(-11deg) skewY(-41deg); /*CAMBIA LA TRANSFORMACION DEL ELEMENTO A UNA ROTACION DE -11 GRADOS Y UNA INCLINACION VERTICAL DE -41 GRADOS*/
+    transition-delay: 1s; /*RETRASO DE LA TRANSICION A 1 SEGUNDO*/
+}
